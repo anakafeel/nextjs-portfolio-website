@@ -47,7 +47,7 @@ const Homepage = ({ slice }: HomepageProps): JSX.Element => {
         {/* Name Section */}
         <div className="col-start-1 md:row-start-1">
           <h1
-            className="mb-8 text-[clamp(3rem,20vmin,20rem)] font-extrabold leading-none tracking-tighter"
+            className="mb-8 text-[clamp(2rem,15vmin,15rem)] font-extrabold leading-none tracking-tighter"
             aria-label={slice.primary.firstname + " " + slice.primary.lastname}
           >
             <span className="block text-slate-400">
@@ -57,13 +57,13 @@ const Homepage = ({ slice }: HomepageProps): JSX.Element => {
               {renderLetters(slice.primary.lastname, "last")}
             </span>
           </h1>
-          <span className="tag-title block bg-gradient-to-tr from-blue-500 via-red-200 to-orange-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
+          <span className="tag-title block bg-gradient-to-tr from-blue-500 via-red-200 to-orange-500 bg-clip-text text-xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-3xl">
             {slice.primary.tag}
           </span>
         </div>
-<div className="col-start-2" style={{ width: '100%', height: '100%' }}>
-  <Computers/>
-</div>
+        <div className="col-start-2 md:col-start-2 md:col-end-3 flex justify-end" style={{ width: '100%', height: '100%' }}>
+          <Computers />
+        </div>
       </div>
     </Bounded>
   );
