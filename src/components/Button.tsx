@@ -1,6 +1,6 @@
 import { PrismicNextLink } from "@prismicio/next";
 import React from "react";
-import { MdArrowOutward } from "react-icons/md";
+import { BsCloudDownload } from "react-icons/bs";
 import clsx from "clsx";
 import { KeyTextField, LinkField } from "@prismicio/client";
 
@@ -31,7 +31,7 @@ export default function Button({
         )}
       />
       <span className="relative flex items-center justify-center gap-2">
-        {label} {showIcon && "=>"}
+        {label} {showIcon && <BsCloudDownload className="inline-block"/>}
       </span>
     </PrismicNextLink>
   );
