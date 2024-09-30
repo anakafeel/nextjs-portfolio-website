@@ -26,7 +26,7 @@ function Model({ open, ...props }) {
   });
 
   return (
-    <group ref={group} {...props} onPointerOver={(e) => (e.stopPropagation(), setHovered(true))} onPointerOut={() => setHovered(false)} dispose={null} scale={[1.9, 1.9, 1.9]}>
+    <group ref={group} {...props} onPointerOver={(e) => (e.stopPropagation(), setHovered(true))} onPointerOut={() => setHovered(false)} dispose={null} scale={[1.5, 1.5, 1.5]}>
       <a.group rotation-x={hinge} position={[0, -0.04, 0.41]}>
         <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
           <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
@@ -48,7 +48,7 @@ export default function App() {
   const [open, setOpen] = useState(true);
 
   return (
-    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 45 }}>
+    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -35], fov: 45 }}>
       <a.pointLight position={[10, 10, 10]} intensity={1.5} />
       <Suspense fallback={null}>
         <group rotation={[0, Math.PI, 0]} onClick={(e) => (e.stopPropagation(), setOpen(!open))}>
