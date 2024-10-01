@@ -232,7 +232,10 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type ProjectDocumentDataSlicesSlice = ImageBlockSlice | TextBlogSlice;
+type ProjectDocumentDataSlicesSlice =
+  | DemoLinksSlice
+  | ImageBlockSlice
+  | TextBlogSlice;
 
 /**
  * Content for Project documents
@@ -662,6 +665,76 @@ export type ContentIndexSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *DemoLinks → Default → Primary → Button*
+ */
+export interface DemoLinksSliceDefaultPrimaryButtonItem {
+  /**
+   * Button Text field in *DemoLinks → Default → Primary → Button*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: demo_links.default.primary.button[].button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *DemoLinks → Default → Primary → Button*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: demo_links.default.primary.button[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *DemoLinks → Default → Primary*
+ */
+export interface DemoLinksSliceDefaultPrimary {
+  /**
+   * Button field in *DemoLinks → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: demo_links.default.primary.button[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  button: prismic.GroupField<Simplify<DemoLinksSliceDefaultPrimaryButtonItem>>;
+}
+
+/**
+ * Default variation for DemoLinks Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DemoLinksSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DemoLinksSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *DemoLinks*
+ */
+type DemoLinksSliceVariation = DemoLinksSliceDefault;
+
+/**
+ * DemoLinks Shared Slice
+ *
+ * - **API ID**: `demo_links`
+ * - **Description**: DemoLinks
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DemoLinksSlice = prismic.SharedSlice<
+  "demo_links",
+  DemoLinksSliceVariation
+>;
+
+/**
  * Item in *Experience → Default → Primary → repeatable*
  */
 export interface ExperienceSliceDefaultPrimaryTitleItem {
@@ -1041,6 +1114,11 @@ declare module "@prismicio/client" {
       ContentIndexSliceDefaultPrimary,
       ContentIndexSliceVariation,
       ContentIndexSliceDefault,
+      DemoLinksSlice,
+      DemoLinksSliceDefaultPrimaryButtonItem,
+      DemoLinksSliceDefaultPrimary,
+      DemoLinksSliceVariation,
+      DemoLinksSliceDefault,
       ExperienceSlice,
       ExperienceSliceDefaultPrimaryTitleItem,
       ExperienceSliceDefaultPrimary,
