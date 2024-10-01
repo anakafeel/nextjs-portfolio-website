@@ -87,6 +87,7 @@ export default function NavBar({
               label={settings.data.cta_label}
               className="ml-3"
             />
+
           </li>
         </div>
         <DesktopMenu settings={settings} pathname={pathname} />
@@ -154,7 +155,7 @@ function DesktopMenu({
           linkField={settings.data.cta_link}
           label={settings.data.cta_label}
           className="ml-3"
-        />
+        />  
       </li>
     </div>
   );

@@ -15,14 +15,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-slate-800 text-slate-100 ">
-      <body className="relative min-h-screen background-gradient">
-        <Header />
-        {children}
-        <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
-        <div className="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
-        <Footer />
-      </body>
-    </html>
+<html lang="en" className="">
+<body className="relative h-screen bg-gradient-to-r from-[#0d0d0d] via-[#1a1a1a] to-[#262626] text-slate-100">
+
+  <Header />
+  {children}
+  <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
+  <div className="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
+  <Footer />
+</body>
+</html>
   );
 }
