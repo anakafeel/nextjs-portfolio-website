@@ -1,7 +1,6 @@
-import { notFound } from "next/navigation";
+
 import { SliceZone } from "@prismicio/react";
 
-import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";

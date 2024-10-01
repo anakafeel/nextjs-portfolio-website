@@ -8,7 +8,6 @@ import Avatar from "./Avatar";
 import {
   PrismicRichText,
   SliceComponentProps,
-  PrismicImage,
 } from "@prismicio/react";
 
 /**
@@ -43,10 +42,6 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
   className="row-start-1 w-full h-full object-cover md:col-start-2 md:row-end-3"
 />
 
-{/*         <PrismicImage
-          field={slice.primary.avatar}
-          className="row-start-1 max-w-sm md:col-start-2 md:row-end-3"
-        /> */}
       </div>
     </Bounded>
   );
