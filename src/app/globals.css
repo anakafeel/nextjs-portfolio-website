@@ -5,8 +5,8 @@
 .background-gradient {
   background: radial-gradient(
     circle at top center,
-    hsla(258, 97%, 45%, 0.651) 0%,
-    hsla(268, 97%, 15%, 0.233) 50%,
-    hsla(268, 100%, 51%, 0.096) 100%
+    hsl(258.2, 36.3%, 17.8%) 0%,
+    hsla(268, 50%, 20%, 0.5) 50%,
+    hsla(268, 30%, 10%, 0.3) 100%
   );
 }

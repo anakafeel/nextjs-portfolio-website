@@ -29,7 +29,6 @@ const ContentIndex = async ({
       data-slice-variation={slice.variation}
       className="flex justify-center items-center min-h-screen"
     >
-      <div className="w-full max-w-3xl">
         <Heading size="xl" className="mb-8">
           {slice.primary.heading}
         </Heading>
@@ -44,7 +43,6 @@ const ContentIndex = async ({
           viewMoreText={slice.primary.view_more_text}
           fallbackItemImage={slice.primary.fallback_item_image}
         />
-      </div>
     </Bounded>
   );
 };
