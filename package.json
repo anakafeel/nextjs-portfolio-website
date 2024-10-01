@@ -22,6 +22,7 @@
     "@tailwindcss/typography": "^0.0.0-insiders.0339c42",
     "@types/three": "^0.169.0",
     "clsx": "^2.1.1",
+    "gsap": "^3.12.5",
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
