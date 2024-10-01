@@ -153,13 +153,13 @@ export default function ContentList({
               >
                 <div className="flex flex-col">
                   <span className="text-3xl font-bold ">{item.data.title}</span>
-                  <div className="flex gap-3 text-yellow-400">
-                    {item.tags.map((tag, index) => (
-                      <span key={index} className="text-lg font-bold">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+ <div className="flex gap-3 text-yellow-400">
+  {item.tags.map((tag, index) => (
+    <span key={index} className="text-lg font-bold mt-2">
+      {tag}
+    </span>
+  ))}
+</div>
                 </div>
                 <span className="ml-auto flex items-center gap-2 text-xl font-medium md:ml-0">
                   {viewMoreText} <MdArrowOutward />
