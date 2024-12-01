@@ -1,21 +1,24 @@
-import {
-  SliceSimulator,
-  SliceSimulatorParams,
-  getSlices,
-} from "@slicemachine/adapter-next/simulator";
-import { SliceZone } from "@prismicio/react";
+"use client";
 
+import { SliceSimulator } from "@slicemachine/adapter-next/simulator";
+import { SliceZone } from "@prismicio/react";
 import { components } from "../../slices";
 
-export default function SliceSimulatorPage({
-  searchParams,
-}: SliceSimulatorParams) {
-  const slices = getSlices(searchParams.state);
+// Disable static generation for this page
+export const dynamic = "force-dynamic";
 
+// Increase timeout if needed (optional)
+export const maxDuration = 120; // 120 seconds
+
+export default function SliceSimulatorPage() {
   return (
-    <SliceSimulator
-    background="#292441">
-      <SliceZone slices={slices} components={components} />
-    </SliceSimulator>
+    <div className="min-h-screen">
+      <SliceSimulator
+        background="#292441"
+        sliceZone={(props) => (
+          <SliceZone {...props} components={components} />
+        )}
+      />
+    </div>
   );
 }
