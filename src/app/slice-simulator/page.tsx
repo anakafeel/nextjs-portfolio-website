@@ -23,3 +23,4 @@ export default function SliceSimulatorPage() {
   );
 }
 /* new blog post added HTT24 */
+/* new project page added for HTT24 project */
