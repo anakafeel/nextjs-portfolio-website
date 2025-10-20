@@ -73,7 +73,8 @@ export default function Avatar({
     <div ref={component} className={clsx("relative inline-block", className)}>
       <div
         className="avatar inline-block overflow-hidden rounded-3xl border-2 border-slate-700 opacity-0"
-        style={{ perspective: "500px", perspectiveOrigin: "150% 150%" }}
+        style={{ perspective: "500px", perspectiveOrigin: "150% 150%" } as React.CSSProperties}
+
       >
         <PrismicNextImage
           field={image}
