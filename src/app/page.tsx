@@ -24,3 +24,4 @@ export async function generateMetadata(): Promise<Metadata> {
 /* new about image added */
 /* new resume link added */
 /* fixed about page navlink */
+/* updated resume link and added experience */
