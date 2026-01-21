@@ -7,6 +7,7 @@ export const components = {
   content_index: dynamic(() => import("./ContentIndex")),
   demo_links: dynamic(() => import("./DemoLinks")),
   experience: dynamic(() => import("./Experience")),
+  experience_timeline: dynamic(() => import("./ExperienceTimeline")),
   homepage: dynamic(() => import("./Homepage")),
   image_block: dynamic(() => import("./ImageBlock")),
   tech_list: dynamic(() => import("./TechList")),

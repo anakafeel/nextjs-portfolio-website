@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "experience_timeline": {
+              "type": "SharedSlice"
+            },
             "experience": {
               "type": "SharedSlice"
             },
