@@ -993,12 +993,22 @@ export interface ExperienceTimelineSliceDefaultPrimaryItemsItem {
   /**
    * tech field in *ExperienceTimeline → Default → Primary → items*
    *
-   * - **Field Type**: Select
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: experience_timeline.default.primary.items[].tech
-   * - **Documentation**: https://prismic.io/docs/fields/select
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  tech: prismic.SelectField<"1" | "2">;
+  tech: prismic.RichTextField;
+
+  /**
+   * logo field in *ExperienceTimeline → Default → Primary → items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience_timeline.default.primary.items[].logo
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  logo: prismic.ImageField<never>;
 }
 
 /**
