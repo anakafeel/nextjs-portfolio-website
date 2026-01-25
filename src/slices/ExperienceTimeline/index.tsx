@@ -194,17 +194,17 @@ const ExperienceTimeline: FC<ExperienceTimelineProps> = ({ slice }) => {
       ref={containerRef}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative flex min-h-screen flex-col justify-center bg-transparent px-4 py-12 sm:px-6 lg:px-8"
+      className="relative flex flex-col justify-center bg-transparent px-4 pb-16 pt-20 sm:px-6 md:min-h-screen md:py-12 lg:px-8"
     >
       <div className="mx-auto w-full max-w-6xl">
         {/* Header */}
-        <header className="mb-8 max-w-2xl">
+        <header className="mb-8 max-w-2xl text-center md:text-left mx-auto md:mx-0">
           {slice.primary?.heading && (
-            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
               {slice.primary.heading}
             </h2>
           )}
-          <div className="mt-3 text-white/60 leading-relaxed">
+          <div className="mt-3 text-white/60 leading-relaxed text-sm sm:text-base">
             {isFilled.richText(slice.primary?.intro) ? (
               <PrismicRichText field={slice.primary.intro} />
             ) : slice.primary?.intro ? (
@@ -214,8 +214,8 @@ const ExperienceTimeline: FC<ExperienceTimelineProps> = ({ slice }) => {
         </header>
 
         {/* Story panel */}
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
-          <div className="grid min-h-[60vh] grid-cols-1 items-center gap-8 p-8 md:grid-cols-[200px_1fr] md:p-10 lg:grid-cols-[220px_1fr] lg:p-12">
+        <div className="relative mx-auto w-full max-w-4xl rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm md:max-w-none md:rounded-3xl">
+          <div className="grid h-auto grid-cols-1 items-start gap-6 p-4 sm:p-6 md:min-h-[60vh] md:grid-cols-[200px_1fr] md:gap-8 md:p-10 lg:grid-cols-[220px_1fr] lg:p-12">
 
             {/* Left nav - fill bar only */}
             <aside className="relative hidden h-full md:flex md:items-center">
@@ -247,7 +247,7 @@ const ExperienceTimeline: FC<ExperienceTimelineProps> = ({ slice }) => {
             </aside>
 
             {/* Slides */}
-            <div className="relative flex min-h-[50vh] items-center justify-center">
+            <div className="relative w-full md:flex md:min-h-[50vh] md:items-center md:justify-center">
               {items.map((item, idx) => {
                 const chips = techChipsByIdx[idx] ?? [];
                 const logoUrl = getLogoUrl(item);
@@ -256,17 +256,17 @@ const ExperienceTimeline: FC<ExperienceTimelineProps> = ({ slice }) => {
                   <article
                     key={idx}
                     data-slide
-                    className="group absolute inset-0 flex items-center justify-center"
+                    className={`group flex justify-center ${idx === 0 ? 'relative' : 'absolute inset-0 invisible opacity-0'} md:absolute md:inset-0 md:flex md:items-center`}
                   >
                     <div
                       data-card
-                      className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10
-                                 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-6 sm:rounded-3xl sm:p-8 md:p-10"
+                      className="relative mx-auto w-full max-w-md overflow-hidden rounded-xl border border-white/10
+                                 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-5 sm:max-w-lg sm:rounded-2xl sm:p-6 md:max-w-2xl md:rounded-3xl md:p-10"
                     >
-                      {/* Hover logo overlay - covers entire card */}
+                      {/* Hover logo overlay - covers entire card (desktop only via CSS media query) */}
                       <div
-                        className="pointer-events-none absolute inset-0 z-30 overflow-hidden rounded-2xl
-                                   opacity-0 transition-all duration-500 ease-out group-hover:opacity-100 sm:rounded-3xl"
+                        className="hover-overlay-desktop pointer-events-none absolute inset-0 z-30 overflow-hidden rounded-xl
+                                   opacity-0 transition-all duration-500 ease-out sm:rounded-2xl md:rounded-3xl"
                       >
                         {/* Background gradient */}
                         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-purple-950/90 to-slate-900/95" />
@@ -275,8 +275,7 @@ const ExperienceTimeline: FC<ExperienceTimelineProps> = ({ slice }) => {
                           <img
                             src={logoUrl}
                             alt={`${item.company ?? "Company"} logo`}
-                            className="absolute inset-0 h-full w-full object-contain p-8 drop-shadow-2xl
-                                       transition-transform duration-500 group-hover:scale-105 sm:p-12"
+                            className="absolute inset-0 h-full w-full object-contain p-8 drop-shadow-2xl sm:p-12"
                           />
                         ) : (
                           <div className="absolute inset-0 flex items-center justify-center">

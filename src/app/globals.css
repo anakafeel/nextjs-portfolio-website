@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  min-height: 100%;
+  background-color: hsl(270, 50%, 15%);
+}
+
+/* Only show hover effects on devices that support hover */
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .hover-overlay-desktop {
+    opacity: 1;
+  }
+}
+
 .background-gradient {
   background: radial-gradient(
     circle at top center,
