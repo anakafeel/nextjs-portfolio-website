@@ -148,7 +148,7 @@ export default function ContentList({
             >
               <a
                 href={`${urlPrefix}/${item.uid}`}
-                className="flex flex-col justify-between border-t border-t-slate-100 py-10  text-slate-200 md:flex-row"
+                className="flex flex-col justify-between border-t border-t-slate-100 py-10 text-slate-200 transition-colors duration-150 hover:bg-white/5 hover:text-yellow-400 md:flex-row"
                 aria-label={item.data.title || ""}
               >
                 <div className="flex flex-col">
@@ -170,7 +170,7 @@ export default function ContentList({
 
           {/* Hover element */}
           <div
-            className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[320px] w-[220px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
+            className="hover-reveal pointer-events-none absolute left-0 top-0 z-50 h-[320px] w-[220px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
             style={{
               backgroundImage:
                 currentItem !== null
