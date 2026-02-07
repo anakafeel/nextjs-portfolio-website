@@ -343,3 +343,5 @@ const ExperienceTimeline: FC<ExperienceTimelineProps> = ({ slice }) => {
 };
 
 export default ExperienceTimeline;
+
+/* new resume link added */
